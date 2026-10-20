@@ -61,7 +61,7 @@ def cmd_info(args):
         data = f.read()
     import struct
     magic = data[:4]
-    ver, w, h, fps, n, gop, qp = struct.unpack("<BHHfIHB", data[4:4+20])
+    ver, w, h, fps, n, gop, qp = struct.unpack("<BHHfIHB", data[4:4+16])
     print(f"magic={magic} version={ver} {w}x{h} fps={fps:.2f} frames={n} gop={gop} qp={qp} size={len(data)}")
 
 
